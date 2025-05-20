@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: avwalgelp-go-gitops
+  description: This is GitOps manifest for avwalgelp-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=avwalgelp-go
+    backstage.io/kubernetes-id: avwalgelp-go 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: rhopp-rhtap-testing/avwalgelp-go-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:avwalgelp-go
